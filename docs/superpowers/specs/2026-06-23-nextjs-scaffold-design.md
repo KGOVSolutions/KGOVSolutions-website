@@ -54,7 +54,7 @@ src/
 - Styling via Tailwind utility classes — clean and professional with a neutral
   palette, intentionally unbranded so real colors/logo can be applied later.
 - The contact page form is **static markup only** — no submission handler or
-  backend wiring in this pass.
+  backend wiring in this pass
 
 ## Components / Units
 
