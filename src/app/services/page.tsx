@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Services — KGOV Solutions",
@@ -39,26 +41,32 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
-      <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-        Management Consulting for the Federal Government
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg text-gray-600">
-        KGOV Solutions provides hands-on consulting services that help agencies
-        plan smarter, operate efficiently, and build capable teams.
-      </p>
-      <div className="mt-12 grid gap-8 sm:grid-cols-2">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            className="rounded-lg border border-gray-200 p-6"
-          >
-            <h2 className="text-lg font-medium text-gray-900">
-              {service.title}
-            </h2>
-            <p className="mt-2 text-gray-600">{service.body}</p>
-          </div>
-        ))}
+    <div>
+      <PageHero
+        eyebrow="Services"
+        title="Management Consulting for the Federal Government"
+        description="KGOV Solutions provides hands-on consulting services that help agencies plan smarter, operate efficiently, and build capable teams."
+      />
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid gap-6 sm:grid-cols-2">
+          {services.map((service, i) => (
+            <Reveal key={service.title} delay={(i % 2) * 90}>
+              <div className="group h-full rounded-xl border border-slate-200 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg hover:shadow-slate-200/60">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-blue-50 text-sm font-bold text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h2 className="text-lg font-semibold text-slate-900">
+                    {service.title}
+                  </h2>
+                </div>
+                <p className="mt-3 leading-relaxed text-slate-600">
+                  {service.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </div>
   );
