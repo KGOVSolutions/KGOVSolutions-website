@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+const highlights = [
+  { title: "Modernization", body: "Placeholder description of legacy system modernization services." },
+  { title: "Security & Compliance", body: "Placeholder description of security and compliance offerings." },
+  { title: "Advisory", body: "Placeholder description of strategy and advisory services." },
+];
+
 export default function HomePage() {
   return (
     <div className="mx-auto max-w-6xl px-6">
@@ -33,11 +39,7 @@ export default function HomePage() {
           What we do
         </h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-3">
-          {[
-            { title: "Modernization", body: "Placeholder description of legacy system modernization services." },
-            { title: "Security & Compliance", body: "Placeholder description of security and compliance offerings." },
-            { title: "Advisory", body: "Placeholder description of strategy and advisory services." },
-          ].map((item) => (
+          {highlights.map((item) => (
             <div key={item.title}>
               <h3 className="text-lg font-medium text-gray-900">{item.title}</h3>
               <p className="mt-2 text-gray-600">{item.body}</p>
