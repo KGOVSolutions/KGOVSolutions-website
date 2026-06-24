@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KGOVSolutions — Solutions for Government Agencies",
-  description: "KGOVSolutions provides solutions to government agencies.",
+  title: "KGOV Solutions — Mission-Ready Consulting. Veteran-Led Results.",
+  description:
+    "KGOV Solutions is a Service-Disabled Veteran-Owned Small Business delivering management consulting services to federal agencies.",
 };
 
 export default function RootLayout({

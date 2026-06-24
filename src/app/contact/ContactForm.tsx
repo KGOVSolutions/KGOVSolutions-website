@@ -38,6 +38,20 @@ export default function ContactForm() {
         />
       </div>
       <div>
+        <label
+          htmlFor="organization"
+          className="block text-sm font-medium text-gray-900"
+        >
+          Organization
+        </label>
+        <input
+          id="organization"
+          name="organization"
+          type="text"
+          className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 focus:border-gray-900 focus:outline-none"
+        />
+      </div>
+      <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-900">
           Message
         </label>

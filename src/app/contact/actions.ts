@@ -18,6 +18,7 @@ export async function sendContactMessage(
 ): Promise<ContactState> {
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
+  const organization = String(formData.get("organization") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
 
   if (!name || !email || !message) {
@@ -43,7 +44,7 @@ export async function sendContactMessage(
     to: CONTACT_TO,
     replyTo: email,
     subject: `New contact form message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    text: `Name: ${name}\nEmail: ${email}\nOrganization: ${organization || "—"}\n\n${message}`,
   });
 
   if (error) {
